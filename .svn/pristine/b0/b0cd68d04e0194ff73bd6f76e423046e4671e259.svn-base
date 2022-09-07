@@ -1,0 +1,20 @@
+%h1 Listing networks
+
+%table{:id => 'networks',:class => 'display'}
+	%thead
+		%tr
+			%th Net
+			%th Nameserver
+			%th Domain
+			%th User
+			%th Password
+			%th Active
+			%th Actions
+
+	%tbody
+		-@networks.each do |network|
+			= render partial: 'table_row', locals: {network: network}
+
+.panel-footer
+	= render 'layouts/modal'
+	= link_to 'New Network', new_network_path, remote: true, :class => 'btn btn-primary'

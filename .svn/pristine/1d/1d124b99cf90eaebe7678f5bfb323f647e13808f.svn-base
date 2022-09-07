@@ -1,0 +1,21 @@
+%h1 
+	=@page_title
+
+%table{:id => 'printer_services', :class => 'display responsive no-wrap'}
+	%thead
+		%tr
+			%th Printer
+			%th Serial / Inv.
+			%th Title
+			%th Creation date
+			%th Solution date
+			%th State
+			%th Action
+			
+			
+
+	%tbody
+		-@printer_services.each do |ps|
+			= render partial: 'table_row', locals: {printer_service: ps}
+.panel-footer
+	= render 'layouts/modal'

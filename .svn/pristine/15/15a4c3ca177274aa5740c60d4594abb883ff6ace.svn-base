@@ -1,0 +1,55 @@
+%html
+%head
+	%title Hardware Inventory
+	= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+	= javascript_include_tag 'application', 'data-turbolinks-track' => true
+	= csrf_meta_tags
+%body
+	%nav.navbar.navbar-default{role: "navigation"}
+		.container-fluid
+			.navbar-header
+				%button.navbar-toggle{"data-target" => ".navbar-ex1-collapse", "data-toggle" => "collapse", type: "button"}
+					%span.sr-only Toggle navigation
+					%span.icon-bar
+					%span.icon-bar
+					%span.icon-bar
+					        
+				.navbar-brand="User: " + session[:usuario] if session[:usuario]
+			.navbar-ex1-collapse.collapse.navbar-collapse
+				%ul.nav.navbar-nav.navbar-right
+					%li.dropdown
+						%a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+							Hardware
+							%span.caret
+						%ul.dropdown-menu{:role => "menu"}
+							%li
+								%a= link_to "Pc's", cabinets_path
+							%li.divider
+							%li
+								%a= link_to "Printers", printers_path
+					%li.dropdown
+						%a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+							Services
+							%span.caret
+						%ul.dropdown-menu{:role => "menu"}
+							%li
+								%a= link_to " Pc's maintenance preventive/failure", cabinet_services_path
+							%li
+								%a= link_to "Pc's preventive maintenance listing", preventive_path			
+							%li
+								%a= link_to "Pc's preventive maintenance scheduler", schedulers_path
+							%li.divider
+						
+							%li
+								%a= link_to " Printers maintenance ", printer_services_path
+							
+					%li= link_to "Users", users_path
+					%li= link_to "Networks", networks_path
+					%li= link_to "Labels", labels_path
+					%li= link_to "Log", "loglist"
+					%li= link_to "Close session", root_path if session[:usuario]
+	
+	.container-fluid
+		.flash_error
+			= render 'shared/flash', :flash => flash
+		= yield

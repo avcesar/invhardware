@@ -1,0 +1,20 @@
+- notavail = 'n/a'
+%tr{:id => "printer_#{printer.id}"}
+
+	%td 
+		= link_to printer.name, printer_printer_services_path(printer)
+	%td 
+		= printer.location
+	%td 
+		= printer.portname
+	%td 
+		= printer.serial_number
+	%td 
+		= printer.inventory_number
+	%td
+		= printer.hardware_state ? printer.hardware_state.name : notavail
+
+	%td{:class => 'right'}
+		= link_to t('Show'), printer, remote: true, :class => 'btn btn-primary btn-xs'
+		= link_to t('Edit'), edit_printer_path(printer), remote: true, :class => 'btn btn-success btn-xs'
+		= link_to t('Destroy'), printer, remote: true, :class => 'btn btn-danger btn-xs', method: :delete, data: { confirm: 'Are you sure?' }

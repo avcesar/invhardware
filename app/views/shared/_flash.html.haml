@@ -1,0 +1,6 @@
+- flash.each do |name, msg|
+	= content_tag :div, msg, class: "alert alert-success" if name == 'notice'
+	= content_tag :div, msg, class: "alert alert-warning" if name == 'alert'
+	= content_tag :div, msg, class: "alert alert-danger" if name == 'error'
+
+- flash.discard

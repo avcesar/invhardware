@@ -1,0 +1,13 @@
+
+
+%tr{:id => "cabinet_#{cabinet.id}"}
+	%td
+		= check_box_tag("cabinet_ids[]", cabinet.id)
+	%td 
+		= cabinet.computersystem.name
+	%td
+		- if cabinet.serial_number.present?
+			= cabinet.serial_number
+	%td
+		- if cabinet.inventory_number.present?
+			= cabinet.inventory_number

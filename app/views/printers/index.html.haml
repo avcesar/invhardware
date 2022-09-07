@@ -1,0 +1,22 @@
+%h1 
+  =t(@page_title)
+
+%table{:id => 'printers', :class => 'display responsive no-wrap'}
+  %thead
+    %tr
+      %th= Printer.human_attribute_name :Name
+      %th= Printer.human_attribute_name :Location
+      %th= Printer.human_attribute_name :Port_Name
+      %th= Printer.human_attribute_name :Serial_number
+      %th= Printer.human_attribute_name :Inventory_number
+      %th= Printer.human_attribute_name :State
+      %th= Printer.human_attribute_name :Actions
+
+  %tbody
+    -@printers.each do |printer|
+      = render partial: 'table_row', locals: {printer: printer}
+.panel-footer
+  = render 'layouts/modal'
+  = link_to t('New Printer'), new_printer_path, remote: true, :class => 'btn btn-primary'
+  = link_to t('.Pdf', :default => t("PDF Version")),
+              '/printerpdf', :class => 'btn btn-primary'

@@ -1,0 +1,20 @@
+%h1 
+	=@page_title
+
+%table{:id => 'cabinet_services', :class => 'display responsive no-wrap'}
+	%thead
+		%tr
+			%th PC
+			%th Title
+			%th Creation date
+			%th Solution date
+			%th State
+			%th Action
+			
+			
+
+	%tbody
+		-@cabinet_services.each do |cs|
+			= render partial: 'table_row', locals: {cabinet_service: cs}
+.panel-footer
+	= render 'layouts/modal'

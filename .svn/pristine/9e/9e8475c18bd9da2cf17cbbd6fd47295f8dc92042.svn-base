@@ -1,0 +1,24 @@
+%h1 
+	=@page_title
+
+%table{:id => 'next_services', :class => 'display responsive no-wrap'}
+	%thead
+		%tr
+			%th Pc
+			%th Next Service Date
+			%th Cant. Services
+
+	%tbody
+		-@services.each do |service|
+			%tr
+				%td
+					= service.name
+				%td
+					= service.next_service_date
+				%td
+					= service.cant_serv	
+
+.panel-footer
+	= link_to t('.Pdf', :default => t("PDF Version")),
+              '/reportpdf', :class => 'btn btn-primary'
+	= render 'layouts/modal'

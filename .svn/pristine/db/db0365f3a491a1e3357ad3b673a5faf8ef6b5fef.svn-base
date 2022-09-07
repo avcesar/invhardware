@@ -1,0 +1,20 @@
+= simple_form_for @printer, :remote => true do |f|
+  
+	= f.error_notification
+
+	.form_group
+		= f.input :name, input_html: {class: 'form-control'}
+
+	.form_group
+		= f.input :location, input_html: {class: 'form-control'}
+
+	.form_group
+		= f.input :portname, input_html: {class: 'form-control'}
+
+	.form_group
+		= f.input :serial_number, input_html: {class: 'form-control'}
+
+	.form_group
+		= f.input :inventory_number, input_html: {class: 'form-control'}
+
+	= f.button :submit, remote: true, class: "btn btn-primary"

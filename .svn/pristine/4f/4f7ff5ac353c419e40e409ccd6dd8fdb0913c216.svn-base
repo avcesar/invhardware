@@ -1,0 +1,156 @@
+192.168.120.81, Servidor RPC no disponible, 2016-03-11 16:30:29 -0300
+192.168.120.81, El host LEGALES01, El archivo chasisid.inf fue creado, 2016-03-11 16:36:49 -0300
+192.168.120.114, LEGALES03, explorado 2016-03-11 16:51:49 -0300
+192.168.120.1, Servidor RPC no disponible, 2016-03-11 18:23:38 -0300
+192.168.120.2, Servidor RPC no disponible, 2016-03-11 18:24:55 -0300
+192.168.120.3, Servidor RPC no disponible, 2016-03-11 18:26:12 -0300
+192.168.120.4, Servidor RPC no disponible, 2016-03-11 18:26:29 -0300
+192.168.120.6, Servidor RPC no disponible, 2016-03-11 18:26:50 -0300
+192.168.120.7, El host BDC2-CCMARDEL,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 18:27:12 -0300
+192.168.120.8, El host SQLSERVER03,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 18:27:48 -0300
+192.168.120.9, Servidor RPC no disponible, 2016-03-11 18:28:05 -0300
+192.168.120.12, El host DC01,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 18:28:38 -0300
+192.168.120.13, Servidor RPC no disponible, 2016-03-11 18:28:55 -0300
+192.168.120.14, Servidor RPC no disponible, 2016-03-11 18:29:59 -0300
+192.168.120.15, El host SQLSERVER02,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 18:30:11 -0300
+192.168.120.16, El host DESASERVER01,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 18:30:21 -0300
+192.168.120.17, El host DC03,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 18:30:26 -0300
+192.168.120.18, El host DBSRV1,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 18:30:47 -0300
+192.168.120.19, El host DESASERVER02,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 18:30:56 -0300
+192.168.120.20, El host APPSRV,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 18:31:13 -0300
+192.168.120.21, Servidor RPC no disponible, 2016-03-11 18:31:30 -0300
+192.168.120.22, Servidor RPC no disponible, 2016-03-11 18:31:45 -0300
+192.168.120.23, El host ML350SRV,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 18:31:51 -0300
+192.168.120.24, Servidor RPC no disponible, 2016-03-11 18:32:05 -0300
+192.168.120.25, El host W7WEBSERVER,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 18:32:21 -0300
+192.168.120.41, El host CODE1,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 18:33:53 -0300
+192.168.120.42, El host CODE2,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 18:34:23 -0300
+192.168.120.44, El host CODE4,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 18:34:59 -0300
+192.168.120.45, Servidor RPC no disponible, 2016-03-11 18:34:59 -0300
+192.168.120.46, El host CODE6,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 18:35:42 -0300
+192.168.120.50, Servidor RPC no disponible, 2016-03-11 18:35:57 -0300
+192.168.120.60, El host CONTABILIDAD04,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 18:36:59 -0300
+192.168.120.61, El host CONTABILIDAD02,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 18:37:06 -0300
+192.168.120.62, El host CONTABILIDAD01,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 18:37:46 -0300
+192.168.120.64, El host GERENCIAADMIN1,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 18:38:30 -0300
+192.168.120.65, El host GERENCIAJUEGO01,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 18:38:57 -0300
+192.168.120.66, El host CONTABILIDAD03,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 18:40:22 -0300
+192.168.120.70, El host MONITORES02,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 18:40:53 -0300
+192.168.120.71, Servidor RPC no disponible, 2016-03-11 18:41:56 -0300
+192.168.120.75, Servidor RPC no disponible, 2016-03-11 18:43:25 -0300
+192.168.120.76, Servidor RPC no disponible, 2016-03-11 18:44:42 -0300
+192.168.120.78, El host PERSONAL14,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 18:45:06 -0300
+192.168.120.79, El host PERSONAL07,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 18:45:31 -0300
+192.168.120.82, El host PERSONAL17,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 18:46:08 -0300
+192.168.120.83, El host PUERTA1,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 18:46:20 -0300
+192.168.120.84, El host DEPTORRHH02, Se regenero el archivo chasisid.inf por inconsistencia con BBDD, 2016-03-11 18:47:04 -0300
+192.168.120.85, El host PERSONAL12,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 18:47:32 -0300
+192.168.120.86, El host VISU-RULETA,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 18:47:55 -0300
+192.168.120.87, El host PROG02,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 18:48:13 -0300
+192.168.120.88, El host GERENCIAJUEGO02,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 18:48:52 -0300
+192.168.120.90, El host PERSONAL02,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 18:49:25 -0300
+192.168.120.91, El host PERSONAL10,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 18:49:51 -0300
+192.168.120.92, El host FINANZAS01,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 18:50:17 -0300
+192.168.120.95, El host PUERTA4,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 18:50:54 -0300
+192.168.120.96, El host SUPERVISORES01,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 18:51:20 -0300
+192.168.120.97, El host CILINDROS01,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 18:51:43 -0300
+192.168.120.99, El host PERSONAL06,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 18:52:13 -0300
+192.168.120.102, Servidor RPC no disponible, 2016-03-11 18:53:38 -0300
+192.168.120.104, El host PROG05,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 18:54:08 -0300
+192.168.120.105, El host PERSONAL04,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 18:54:35 -0300
+192.168.120.106, El host PERSONAL05,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 18:55:07 -0300
+192.168.120.107, El host CABI-CAMBIOS,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 18:55:47 -0300
+192.168.120.108, El host PERSONAL01,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 18:56:26 -0300
+192.168.120.109, El host PERSONAL13,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 18:56:34 -0300
+192.168.120.110, El host VENTAPAGO01,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 18:58:03 -0300
+192.168.120.111, El host PERSONAL16, Se regenero el archivo chasisid.inf por inconsistencia con BBDD, 2016-03-11 18:58:35 -0300
+192.168.120.113, El host TRAMITEJUEGO02,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 18:58:46 -0300
+192.168.120.116, El host PROG06,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 18:59:20 -0300
+192.168.120.117, El host PERSONAL15,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 18:59:59 -0300
+192.168.120.119, El host SECRETARIA02,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 19:00:22 -0300
+192.168.120.122, El host SEGURIDADINT01,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 19:00:48 -0300
+192.168.120.123, El host SECRETARIA04,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 19:01:16 -0300
+192.168.120.124, El host CONVERSION01,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 19:05:24 -0300
+192.168.120.125, El host VISU-SUPER,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 19:05:42 -0300
+192.168.120.126, Servidor RPC no disponible, 2016-03-11 19:05:43 -0300
+192.168.120.128, El host SALAMAQUINAS01,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 19:05:54 -0300
+192.168.120.129, El host VISU_CARTEADO,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 19:06:06 -0300
+192.168.120.130, Servidor RPC no disponible, 2016-03-11 19:06:23 -0300
+192.168.120.132, Servidor RPC no disponible, 2016-03-11 19:06:30 -0300
+192.168.120.133, Servidor RPC no disponible, 2016-03-11 19:06:47 -0300
+192.168.120.134, Servidor RPC no disponible, 2016-03-11 19:07:05 -0300
+192.168.120.135, Servidor RPC no disponible, 2016-03-11 19:07:22 -0300
+192.168.120.136, Servidor RPC no disponible, 2016-03-11 19:07:39 -0300
+192.168.120.140, El host PERSONAL08, Se regenero el archivo chasisid.inf por inconsistencia con BBDD, 2016-03-11 19:08:24 -0300
+192.168.120.144, SQLSERVERXX, explorado 2016-03-11 19:09:05 -0300
+192.168.120.145, El host RECEFECTIVO02,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 19:09:26 -0300
+192.168.120.146, El host DEPTORRHH01,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 19:11:13 -0300
+192.168.120.147, El host COVA01,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 19:11:43 -0300
+192.168.120.148, Servidor RPC no disponible, 2016-03-11 19:12:00 -0300
+192.168.120.149, Servidor RPC no disponible, 2016-03-11 19:12:18 -0300
+192.168.120.150, El host ESTADISTICAS01,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 19:12:52 -0300
+192.168.120.153, El host CABI-RULETA, Se regenero el archivo chasisid.inf por inconsistencia con BBDD, 2016-03-11 19:13:19 -0300
+192.168.120.155, El host DIVMAQUINAS01,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 19:13:51 -0300
+192.168.120.156, El host COVA02,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 19:14:31 -0300
+192.168.120.157, El host FINANZAS02,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 19:14:58 -0300
+192.168.120.158, Servidor RPC no disponible, 2016-03-11 19:16:15 -0300
+192.168.120.161, El host VENTAPAGO02,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 19:16:52 -0300
+192.168.120.162, El host PERSONAL19,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 19:17:23 -0300
+192.168.120.165, El host SERVMEDICO02,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 19:17:37 -0300
+192.168.120.167, El host GERENCIAJUEGO03,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 19:18:09 -0300
+192.168.120.168, TURNORELLENO01, explorado 2016-03-11 19:18:49 -0300
+192.168.120.169, El host TESOROMONEDAS01,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 19:19:18 -0300
+192.168.120.171, Servidor RPC no disponible, 2016-03-11 19:19:25 -0300
+192.168.120.173, El host SECRETARIA03,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 19:20:00 -0300
+192.168.120.175, El host TESOROFICHAS01,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 19:20:29 -0300
+192.168.120.176, El host CABI-SOPORTE, Se regenero el archivo chasisid.inf por inconsistencia con BBDD, 2016-03-11 19:20:57 -0300
+192.168.120.177, El host PROG03, Se regenero el archivo chasisid.inf por inconsistencia con BBDD, 2016-03-11 19:21:07 -0300
+192.168.120.178, El host CONTABILIDAD06,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 19:21:35 -0300
+192.168.120.179, El host INTENDENCIA01,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 19:22:02 -0300
+192.168.120.182, El host CABI-CARTEADO,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 19:22:20 -0300
+192.168.120.183, El host MESAENTRADAS01,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 19:22:59 -0300
+192.168.120.185, El host PERSONAL03,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 19:23:32 -0300
+192.168.120.186, El host SECRETARIA01,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 19:24:00 -0300
+192.168.120.193, El host FINANZAS03,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 19:24:51 -0300
+192.168.120.195, El host SERVMEDICO01,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 19:25:01 -0300
+192.168.120.199, El host MONITORES01,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 19:25:22 -0300
+192.168.120.200, Servidor RPC no disponible, 2016-03-11 19:25:40 -0300
+192.168.120.202, Servidor RPC no disponible, 2016-03-11 19:26:01 -0300
+192.168.120.203, Servidor RPC no disponible, 2016-03-11 19:26:18 -0300
+192.168.120.205, Servidor RPC no disponible, 2016-03-11 19:26:39 -0300
+192.168.120.206, Servidor RPC no disponible, 2016-03-11 19:26:56 -0300
+192.168.120.207, Servidor RPC no disponible, 2016-03-11 19:27:13 -0300
+192.168.120.208, Servidor RPC no disponible, 2016-03-11 19:27:30 -0300
+192.168.120.209, Servidor RPC no disponible, 2016-03-11 19:27:47 -0300
+192.168.120.210, Servidor RPC no disponible, 2016-03-11 19:28:04 -0300
+192.168.120.211, Servidor RPC no disponible, 2016-03-11 19:28:21 -0300
+192.168.120.212, Servidor RPC no disponible, 2016-03-11 19:28:38 -0300
+192.168.120.213, Servidor RPC no disponible, 2016-03-11 19:28:55 -0300
+192.168.120.214, Servidor RPC no disponible, 2016-03-11 19:29:12 -0300
+192.168.120.215, Servidor RPC no disponible, 2016-03-11 19:29:29 -0300
+192.168.120.217, Servidor RPC no disponible, 2016-03-11 19:29:50 -0300
+192.168.120.220, El host TRAMITEJUEGO01,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 19:30:24 -0300
+192.168.120.222, El host PROG01,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 19:30:57 -0300
+192.168.120.245, El host RECEFECTIVO01,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 19:32:36 -0300
+192.168.120.246, El host PERSONAL11,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 19:33:15 -0300
+192.168.120.250, Servidor RPC no disponible, 2016-03-11 19:33:44 -0300
+192.168.120.251, El host PERSONAL09,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 19:34:08 -0300
+192.168.120.252, El host CEREMONIAL01,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 19:34:27 -0300
+192.168.121.1, Servidor RPC no disponible, 2016-03-11 19:35:52 -0300
+192.168.121.140, El host TESORERIA01-CMH,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 19:55:24 -0300
+192.168.123.1, Servidor RPC no disponible, 2016-03-11 20:22:36 -0300
+192.168.123.53, El host TESORERIA01-CMA,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 20:35:54 -0300
+192.168.123.54, El host CABINA01-CMA,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 20:49:12 -0300
+192.168.124.1, Servidor RPC no disponible, 2016-03-11 21:04:08 -0300
+192.168.124.96, El host TESORERIA01-CMI,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 21:11:05 -0300
+192.168.124.97, El host CABINA01-CMI,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 21:12:36 -0300
+192.168.125.1, Servidor RPC no disponible, 2016-03-11 21:23:23 -0300
+192.168.125.177, El host TESORERIA01-CTA,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 21:36:09 -0300
+192.168.125.179, El host CABINA01-CTA,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 21:37:32 -0300
+192.168.126.1, Servidor RPC no disponible, 2016-03-11 21:42:56 -0300
+192.168.126.2, El host PDC-HERMITAGE,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 21:43:33 -0300
+192.168.126.10, El host SEGURIDAD01-CHE,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 21:45:20 -0300
+192.168.126.11, El host CONTAB01-CHE,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 21:45:55 -0300
+192.168.126.12, El host CAJA01-CHE,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 21:46:47 -0300
+192.168.126.13, El host TESORERIA01-CHE,El  archivo chasisid.inf es consistente con BBDD, 2016-03-11 21:47:24 -0300
+192.168.126.14, El host CONVER01-CHE no tiene el shareo C$, 2016-03-11 21:47:59 -0300

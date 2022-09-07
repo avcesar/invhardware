@@ -1,0 +1,35 @@
+%h4 Service details
+.container
+	.row
+	.col-sm-6.well{:style => 'width: 48%'}
+		%p 
+			%b Pc: 
+			=@printer_service.printer.name
+
+		%p 
+			%b User: 
+			=User.find(@printer_service.user_id).user
+
+		%p 
+			%b Title: 
+			=@printer_service.title
+
+		%p 
+			%b Creation Date: 
+			=@printer_service.creation_date
+
+		%p 
+			%b Problem: 
+			=@printer_service.problem
+
+		%p 
+			%b Solution date: 
+			=@printer_service.solution_date
+
+		%p 
+			%b Solution: 
+			=@printer_service.solution
+
+		%p 
+			%b Solution user: 
+			=User.find(@printer_service.solution_user_id).user if @printer_service.solution_user_id

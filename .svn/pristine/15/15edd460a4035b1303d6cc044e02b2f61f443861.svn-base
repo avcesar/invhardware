@@ -1,0 +1,7 @@
+.nested-fields
+	= f.input :name, label: "Name"
+	= f.input :model, label: "Model"
+	= f.input :manufacturer, label: "Manufacturer"
+	= f.input :domain, label: "Domain"
+	= f.input :ip, label: "Ip"
+	= f.input :totalphysicalmemory, label: "Total memory in bytes"

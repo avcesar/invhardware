@@ -1,0 +1,15 @@
+%tr{:id => "cabinet_service_#{cabinet_service.id}"}
+	%td
+		= cabinet_service.cabinet.computersystem.name
+	%td
+		= cabinet_service.title
+	%td
+		= cabinet_service.creation_date
+	%td
+		= cabinet_service.solution_date
+	%td
+		= cabinet_service.state.name
+	%td{:class => 'right'}
+		= link_to 'Show', cabinet_cabinet_service_path(cabinet_service.cabinet.id, cabinet_service.id), remote: true, :class => 'btn btn-primary btn-xs'
+		= link_to 'Edit', edit_cabinet_cabinet_service_path(cabinet_service.cabinet.id, cabinet_service.id), remote: true, :class => 'btn btn-success btn-xs'
+		= link_to 'Destroy', cabinet_cabinet_service_path(cabinet_service.cabinet.id, cabinet_service.id), remote: true, :class => 'btn btn-danger btn-xs', method: :delete, data: { confirm: 'Are you sure?' }

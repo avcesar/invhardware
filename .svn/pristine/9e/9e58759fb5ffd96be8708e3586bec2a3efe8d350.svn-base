@@ -1,0 +1,6 @@
+.nested-fields
+	= f.input :adaptertype, label: "Adapter type"
+	= f.input :name, label: "Name"
+	= f.input :macaddress, label: "Macaddress"
+	= f.input :speed, label: "Speed"
+	= link_to_remove_association "Remove network adapter", f

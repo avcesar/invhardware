@@ -1,0 +1,33 @@
+- notavail = 'n/a'
+%p
+	%strong Name:
+	= @printer.name
+
+%p
+	%strong Location:
+	= @printer.location
+
+%p
+	%strong Port name:
+	= @printer.portname
+
+%p
+	%strong Serial Number:
+	= @printer.serial_number
+
+%p
+	%strong Inventory Number:
+	= @printer.inventory_number
+
+%p 
+	%b State: 
+	= @printer.hardware_state_id ? HardwareState.find(@printer.hardware_state_id).name : notavail
+	
+%p
+	%strong Comment:
+	= @printer.comment		
+
+.panel-footer
+	= link_to 'Edit', edit_printer_path(@printer), remote: true, :class => 'btn btn-default btn-sm'  
+	|
+	= link_to 'Back', printers_path, :class => 'btn btn-default btn-sm'

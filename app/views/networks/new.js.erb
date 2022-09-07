@@ -1,0 +1,6 @@
+$modal = $('.modal'),
+$modalBody = $('.modal .modal-body'),
+$modalHeading = $('.modal .modal-heading');
+$modalHeading.html("New Network");
+$modalBody.html("<%= j render ('form') %>");
+$modal.modal();

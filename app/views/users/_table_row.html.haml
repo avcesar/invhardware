@@ -1,0 +1,18 @@
+%tr{:id => "user_#{user.id}"}
+	%td
+		= user.user
+	%td
+		= user.lastname
+	%td
+		= user.name
+	%td
+		= user.smtp
+	%td
+		= user.pop3
+	%td
+		= user.password
+
+	%td{:class => 'right'}
+		= link_to t('Show'), user, remote: true, :class => 'btn btn-primary btn-xs'
+		= link_to t('Edit'), edit_user_path(user), remote: true, :class => 'btn btn-success btn-xs'
+		= link_to t('Destroy'), user, remote: true, :class => 'btn btn-danger btn-xs', method: :delete, data: { confirm: 'Are you sure?' }

@@ -1,0 +1,10 @@
+$(document).ready(function() {
+		var node = $('#printers').dataTable().fnAddData(["<a href='/printers/<%=@printer.id%>'><%=@printer.name %></a>","<%= @printer.location ? @printer.location : 'n/a'  %>","<%= @printer.portname ? @printer.portname : 'n/a' %>","<%= @printer.serial_number ? @printer.serial_number : 'n/a'  %>","<%= @printer.inventory_number ? @printer.inventory_number : 'n/a' %>", '<a class="btn btn-primary btn-xs" data-remote="true" href="/printers/<%=@printer.id%>">Show</a> <a class="btn btn-success btn-xs" data-remote="true" href="/printers/<%=@printer.id%>/edit">Edit</a> <a class="btn btn-danger btn-xs" data-confirm="Are you sure?" data-method="delete" data-remote="true" href="/printers/<%=@printer.id%>" rel="nofollow">Destroy</a>']);
+		var row = $('#printers').dataTable().fnGetNodes(node);
+		$(row).attr('id',"printer_<%= @printer.id %>");
+		$('#printers tr td:nth-child(6)').addClass('right');
+});
+
+$('#ajax-modal').modal('hide');
+$('.flash_error').attr('style','block')
+$('.flash_error').html("<%= j render ('shared/flash') %>").delay(3000).fadeOut("slow");

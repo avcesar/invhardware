@@ -1,0 +1,63 @@
+es:
+
+  Listing Pc's: "Listado de PC's"
+  Listing Printers: "Listado de Impresoras"
+  Listing networks: "Listado de redes"
+  User Listing: "Listado de Usuarios"
+  PDF Version: "Version PDF"
+  New User: "Nuevo Usuario"
+  New Printer: "Nueva Impresora"
+  New Network: "Nueva Red"
+  Show: "Ver"
+  Edit: "Editar"
+  Destroy: "Eliminar"
+  User: "Usuario"
+  Users: "Usuarios"
+  Close session: "Cerrar Sesion"
+  Printers: "Impresoras"
+  Labels: "Etiquetas"
+  Networks: "Redes"
+  Hardware: "Hardware"
+  Services: "Servicios"
+  Log: "Log"
+  Pc's maintenance preventive/failure: "Mantenimiento de PC's Preventivo /Fallas"
+  Pc's preventive maintenance listing: "Listado de Manteniemito de PC's"
+  Pc's preventive maintenance scheduler: "Agenda de Mantenieminto Preventivo de PC's"
+  Printers maintenance: "Mantenimiento de Impresoras"
+  Next Preventive service: "Proximos servicios preventivos "
+  Listing Printer Services: "Listado de Servicios de impresoras"
+
+  activerecord:
+    attributes:
+      cabinet:
+        Serial_Number: "Nro. de Serie"
+        Inventory_Number: "Nro. de Inv."
+        Actions: "Acciones"
+    
+      user:
+        User: "Usuario"
+        Lastname: "Apellido"
+        Name: "Nombre"
+        Password: "Contraseña"
+        Actions: "Acciones"
+
+      printer:
+        Name: "Nombre"
+        Location: "Ubicacion"
+        Port_Name: "Puerto"
+        Serial_number: "Nro Serie"
+        Inventory_number: "Nro Inv."
+        State: "Estado"
+        Actions: "Acciones"
+
+      network:
+        Net: "Red"
+        Nameserver: "Servidor de Nombres"
+        Domain: "Dominio"
+        User: "Usuario"
+        Active: "Activo"
+        Actions: "Acciones"
+
+      cabinet_service:
+        Next_Service_Date: "Fecha prox. servicio"
+        Cant_Services: "Cant. servicios"

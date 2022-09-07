@@ -1,0 +1,13 @@
+%h1 
+	=@page_title
+
+%table{:id => 'users', :class => 'display responsive no-wrap'}
+	%thead
+		%tr
+			%th User
+			%th Name
+
+	%tbody
+		-@users.each do |user|
+			= render partial: 'table_row', locals: {user: user}
+.panel-footer

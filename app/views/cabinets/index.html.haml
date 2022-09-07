@@ -1,0 +1,27 @@
+%h1 
+	=t(@page_title)
+
+%table{:id => 'cabinets', :class => 'display responsive no-wrap'}
+	%thead
+		%tr
+			%th PC
+			%th Ip
+			%th O.S.
+			%th S.Pack
+			%th CPU
+			%th Cores
+			%th Clock
+			%th Ram(Gb)
+			%th HDD(Gb)
+			%th= Cabinet.human_attribute_name :Serial_Number
+			%th= Cabinet.human_attribute_name :Inventory_Number
+			%th Virtual
+			%th= Cabinet.human_attribute_name :Actions
+			
+
+	%tbody
+		-@cabinets.each do |cabinet|
+			= render partial: 'table_row', locals: {cabinet: cabinet}
+.panel-footer
+	= render 'layouts/modal'
+	= link_to 'new cabinet', new_cabinet_path, remote: true, :class => 'btn btn-primary'

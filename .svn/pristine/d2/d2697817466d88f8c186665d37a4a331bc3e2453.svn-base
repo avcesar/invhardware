@@ -1,0 +1,20 @@
+%h1 
+	=@page_title
+
+%table{:id => 'printer_services', :class => 'display responsive no-wrap'}
+	%thead
+		%tr
+			%th Title
+			%th Creation date
+			%th Solution date
+			%th State
+			%th Action
+			
+			
+
+	%tbody
+		-@printer.printer_services.each do |ps|
+			= render partial: 'table_row', locals: {printer_service: ps}
+.panel-footer
+	= render 'layouts/modal'
+	= link_to 'new service', new_printer_printer_service_path(@printer), remote: true, :class => 'btn btn-primary'	

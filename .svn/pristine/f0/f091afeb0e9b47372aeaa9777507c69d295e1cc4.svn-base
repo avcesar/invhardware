@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  state_id: 1
+  creation_date: 2015-07-09 19:44:58
+  solution_date: 2015-07-09 19:44:58
+  problem: MyText
+  solution: MyText
+  user_id: 1
+  solution_user_id: 1
+  cabinet_id: 1
+  typeservice_id: 1
+
+two:
+  title: MyString
+  state_id: 1
+  creation_date: 2015-07-09 19:44:58
+  solution_date: 2015-07-09 19:44:58
+  problem: MyText
+  solution: MyText
+  user_id: 1
+  solution_user_id: 1
+  cabinet_id: 1
+  typeservice_id: 1

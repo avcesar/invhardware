@@ -1,0 +1,13 @@
+$(document).ready(function() {
+	var oTable = $('#cabinets').dataTable();
+	oTable.fnDeleteRow( document.getElementById("cabinet_<%= @cabinet.id %>"));
+	
+	var node = $('#cabinets').dataTable().fnAddData(["<a href='/cabinets/<%=@cabinet.id%>'><%=@cabinet.computersystem.name %></a>","<%= @cabinet.computersystem.ip %>","<%= @cabinet.operatingsystem ? @cabinet.operatingsystem.caption : 'n/a' %>","<%= @cabinet.operatingsystem ? @cabinet.operatingsystem.csdversion : 'n/a'  %>","<%= @cabinet.processors[0] ? @cabinet.processors[0].name : 'n/a' %>","<%= @cabinet.processors.length %>","<%= @cabinet.processors[0] ? @cabinet.processors[0].currentclockspeed : 'n/a'%>","<%= @cabinet.computersystem ? ((@cabinet.computersystem.totalphysicalmemory.to_f / (2 ** 30))* 100).round.to_f / 100 : 'n/a'%>","<%= @cabinet.diskdrives[0] ? ((@cabinet.diskdrives[0].size.to_f / (2 ** 30))* 100).round.to_f / 100 : 'n/a'%>","<%= @cabinet.serial_number ? @cabinet.serial_number : 'n/a' %>","<%= @cabinet.inventory_number ? @cabinet.inventory_number : 'n/a' %>","<%= @cabinet.virtual || 'n/a' %>", '<a class="btn btn-primary btn-xs" data-remote="true" href="/cabinets/<%=@cabinet.id%>">Show</a> <a class="btn btn-success btn-xs" data-remote="true" href="/cabinets/<%=@cabinet.id%>/edit">Edit</a> <a class="btn btn-danger btn-xs" data-confirm="Are you sure?" data-method="delete" data-remote="true" href="/cabinets/<%=@cabinet.id%>" rel="nofollow">Destroy</a>']);
+	var row = $('#cabinets').dataTable().fnGetNodes(node);
+	$(row).attr('id',"cabinet_<%= @cabinet.id %>");
+	$('#cabinets tr td:nth-child(13)').addClass('right');
+});
+
+$('#ajax-modal').modal('hide');
+$('.flash_error').attr('style','block')
+$('.flash_error').html("<%= j render ('shared/flash') %>").delay(3000).fadeOut("slow");

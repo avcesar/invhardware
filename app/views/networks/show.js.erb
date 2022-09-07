@@ -1,0 +1,6 @@
+$modal = $('.modal'),
+$modalBody = $('.modal .modal-body'),
+$modalHeading = $('.modal .modal-heading');
+$modalHeading.html("Show Network");
+$modalBody.html("<%= j render ('show') %>");
+$modal.modal();

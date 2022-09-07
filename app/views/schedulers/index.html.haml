@@ -1,0 +1,16 @@
+%h1 
+  =@page_title
+
+%table{:id => 'schedulers', :class => 'display responsive no-wrap'}
+  %thead
+    %tr
+      %th Name
+      %th Next Service Date
+      %th frecuency
+      %th Actions
+
+  %tbody
+    -@schedulers.each do |scheduler|
+      = render partial: 'table_row', locals: {scheduler: scheduler}
+.panel-footer
+  = render 'layouts/modal'

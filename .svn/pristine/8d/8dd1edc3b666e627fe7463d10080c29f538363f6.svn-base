@@ -1,0 +1,11 @@
+%tr{:id => "scheduler_#{scheduler.id}"}
+
+	%td 
+		= scheduler.cabinet.computersystem.name
+	%td 
+		= scheduler.next_service_date
+	%td 
+		= scheduler.frecuency
+
+	%td{:class => 'right'}
+		= link_to 'Edit', edit_scheduler_path(scheduler), remote: true, :class => 'btn btn-success btn-xs'

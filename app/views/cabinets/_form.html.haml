@@ -1,0 +1,99 @@
+= simple_form_for @cabinet, :remote => true do |f|
+
+	= f.error_notification 
+
+	.form-group
+		= f.input :serial_number, input_html: {class: 'form-control'}
+
+	.form-group
+		= f.input :inventory_number, input_html: {class: 'form-control'}
+
+	.form-group
+		= f.label :virtual, :class => "check_box"
+		= f.check_box :virtual, input_html: {class: 'form-control'}
+
+	.form-group
+		= f.label :active, :class => "check_box"
+		= f.check_box :active, input_html: {class: 'form-control'}
+
+	.form-group	
+		%h4 System Details
+		#computersystem
+			= f.simple_fields_for :computersystem do |cs|
+				= render 'computersystem_fields', :f => cs
+
+	.form-group	
+		%h4 Operating System Details
+		#computersystem
+			= f.simple_fields_for :operatingsystem do |os|
+				= render 'operatingsystem_fields', :f => os
+
+	.form-group	
+		%h4 Base Board Details
+		#computersystem
+			= f.simple_fields_for :baseboard do |bb|
+				= render 'baseboard_fields', :f => bb
+			
+	.form-group	
+		%h4 Bios Details
+		#bios
+			= f.simple_fields_for :bios do |b|
+				= render 'bios_fields', :f => b
+			
+	.form-group	
+		%h4 Processor Details
+		#processor
+			= f.simple_fields_for :processors do |cpu|
+				= render 'processor_fields', :f => cpu
+			.links
+				= link_to_add_association 'Add processor', f, :processors
+
+	.form-group	
+		%h4 Memory Details
+		#physicalmemory
+			= f.simple_fields_for :physicalmemories do |ram|
+				= render 'physicalmemory_fields', :f => ram
+			.links
+				= link_to_add_association 'Add memory', f, :physicalmemories
+
+	.form-group	
+		%h4 Storage Drives Details
+		#diskdrives
+			= f.simple_fields_for :diskdrives do |hdd|
+				= render 'diskdrive_fields', :f => hdd
+			.links
+				= link_to_add_association 'Add storage', f, :diskdrives
+
+	.form-group	
+		%h4 Optical Drives Details
+		#opticaldrives
+			= f.simple_fields_for :cdromdrives do |cd|
+				= render 'cdromdrive_fields', :f => cd
+			.links
+				= link_to_add_association 'Add optical drive', f, :cdromdrives
+
+	.form-group	
+		%h4 Video Controllers Details
+		#videocontrollers
+			= f.simple_fields_for :videocontrollers do |vga|
+				= render 'videocontroller_fields', :f => vga
+			.links
+				= link_to_add_association 'Add video controller', f, :videocontrollers
+
+	.form-group	
+		%h4 Destop Monitor Details
+		#desktopmonitor
+			= f.simple_fields_for :desktopmonitors do |dm|
+				= render 'desktopmonitor_fields', :f => dm
+			.links
+				= link_to_add_association 'Add desktop monitor', f, :desktopmonitors
+
+	.form-group	
+		%h4 Network Adapter Details
+		#networkadapter
+			= f.simple_fields_for :networkadapters do |nic|
+				= render 'networkadapter_fields', :f => nic
+			.links
+				= link_to_add_association 'Add network adapter', f, :networkadapters
+
+	= f.button :submit, remote: true, class: "btn btn-primary"

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  adaptertype: MyString
+  name: MyString
+  macaddress: MyString
+  speed: 1
+
+two:
+  adaptertype: MyString
+  name: MyString
+  macaddress: MyString
+  speed: 1

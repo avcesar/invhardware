@@ -1,0 +1,6 @@
+.nested-fields
+	= f.input :caption, label: "Caption"
+	= f.input :csdversion, label: "Service Pack"
+	= f.input :countrycode, label: "Country Code"
+	= f.input :currenttimezone, label: "Current Time Zone"
+	= f.input :version, label: "Version"

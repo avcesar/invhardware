@@ -1,0 +1,20 @@
+%h1 
+	=t(@page_title)
+
+%table{:id => 'networks',:class => 'display'}
+	%thead
+		%tr
+			%th= Network.human_attribute_name :Net
+			%th= Network.human_attribute_name :Nameserver
+			%th= Network.human_attribute_name :Domain
+			%th= Network.human_attribute_name :User
+			%th= Network.human_attribute_name :Active
+			%th= Network.human_attribute_name :Actions
+
+	%tbody
+		-@networks.each do |network|
+			= render partial: 'table_row', locals: {network: network}
+
+.panel-footer
+	= render 'layouts/modal'
+	= link_to t('New Network'), new_network_path, remote: true, :class => 'btn btn-primary'

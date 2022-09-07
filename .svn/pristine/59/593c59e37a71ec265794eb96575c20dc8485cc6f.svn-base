@@ -1,0 +1,5 @@
+%tr{:id => "user_#{user.id}"}
+	%td
+		= user.user
+	%td
+		= user.name

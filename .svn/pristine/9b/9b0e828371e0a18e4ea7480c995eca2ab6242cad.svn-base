@@ -1,0 +1,4 @@
+.nested-fields
+	= f.input :capacity, label: "Capacity"
+	= f.input :speed, label: "Speed"
+	= link_to_remove_association "remove memory", f

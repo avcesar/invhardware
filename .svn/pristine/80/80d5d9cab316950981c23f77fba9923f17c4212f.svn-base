@@ -1,0 +1,31 @@
+class UsersController < ApplicationController
+	before_filter :authorize_admin!, :except => [:login, :autenticar]
+
+	def login
+  	reset_session
+  	@user = User.new
+    respond_to do |format|
+	    format.html # show.html.erb
+	    format.xml  { render :xml => @user }
+  	end
+  end	
+
+  def autenticar
+  	@user = User.new
+  	if @user.validar(params[:user][:user],params[:user][:password])
+  		session[:usuario] = @user.nombre
+  		session[:grupo] = @user.grupo
+  		redirect_to :controller => 'cabinets', :action => 'index'
+  	else
+  		flash[:error] = 'Ohhh Noooo! Usuario y/o clave invalidos'
+  		#redirect_to :controller => 'users', :action => 'login'
+      render :template => 'users/login'
+  	end	
+  end
+
+  def index
+    @page_title = 'User Listing'
+    @users = User.all
+  end
+  
+end

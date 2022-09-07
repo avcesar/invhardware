@@ -1,0 +1,99 @@
+class CabinetsController < ApplicationController
+  before_filter :authorize_admin!
+  before_action :set_cabinet, only: [:show, :edit, :update, :destroy]
+
+  # GET /cabinets
+  # GET /cabinets.json
+  def index
+    @page_title = "Listing Pc's"
+    @cabinets = Cabinet.all
+  end
+
+  # GET /cabinets/1
+  # GET /cabinets/1.json
+  def show
+  end
+
+  # GET /cabinets/new
+  def new
+    @page_title = "New Pc's"
+
+    @cabinet = Cabinet.new
+    @cabinet.build_baseboard
+    @cabinet.build_bios
+    @cabinet.build_computersystem
+    @cabinet.build_operatingsystem
+    @cabinet.processors.build
+    @cabinet.videocontrollers.build
+    @cabinet.desktopmonitors.build
+    @cabinet.cdromdrives.build
+    @cabinet.networkadapters.build
+    @cabinet.physicalmemories.build
+    @cabinet.diskdrives.build
+  end
+
+  # GET /cabinets/1/edit
+  def edit
+    @page_title = "Edit Pc"
+
+    @cabinet.build_baseboard if !@cabinet.baseboard
+    @cabinet.build_bios if !@cabinet.bios
+    @cabinet.build_operatingsystem if !@cabinet.operatingsystem
+    @cabinet.processors.build if !@cabinet.processors[0]
+    @cabinet.videocontrollers.build if !@cabinet.videocontrollers[0]
+    @cabinet.desktopmonitors.build if !@cabinet.desktopmonitors[0]
+    @cabinet.cdromdrives.build if !@cabinet.cdromdrives[0]
+    @cabinet.networkadapters.build if ! @cabinet.networkadapters[0] 
+    @cabinet.physicalmemories.build if !@cabinet.physicalmemories[0]
+    @cabinet.diskdrives.build if !@cabinet.diskdrives[0]
+  end
+
+  # POST /cabinets
+  # POST /cabinets.json
+  def create
+    @cabinet = Cabinet.new(cabinet_params)
+    
+    if @cabinet.save
+      respond_to do |format|
+        format.html { redirect_to @cabinet, notice: 'Cabinet was successfully created.' }
+        format.js { flash[:notice] = 'Cabinet was successfully created.'}
+      end
+    else
+      render 'new'
+    end
+  end
+
+  # PATCH/PUT /cabinets/1
+  # PATCH/PUT /cabinets/1.json
+  def update
+		if @cabinet.update(cabinet_params)
+			respond_to do |format|
+      	format.html { redirect_to @cabinet, notice: 'Cabinet was successfully updated.' }
+        format.js { flash[:notice] = 'Cabinet was successfully updated.'}
+      end
+    else
+    	render 'edit'
+    end
+  end
+
+  # DELETE /cabinets/1
+  # DELETE /cabinets/1.json
+  def destroy
+    @cabinet.destroy
+    respond_to do |format|
+      format.html { redirect_to cabinets_url, notice: 'Cabinet was successfully destroyed.' }
+      format.js { flash[:alert] = 'Cabinet was successfully destroyed.'}
+    end
+  end
+
+  private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_cabinet
+      @cabinet = Cabinet.find(params[:id])
+    end
+
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def cabinet_params
+      params.require(:cabinet).permit(:serial_number, :inventory_number, :virtual, :active, computersystem_attributes: [:id, :name, :model, :manufacturer, :domain, :ip, :totalphysicalmemory, :_destroy], operatingsystem_attributes: [:id, :caption, :csdversion, :countrycode, :currenttimezone, :version, :_destroy ], baseboard_attributes: [:id, :product, :manufacturer, :serialnumber, :_destroy], processors_attributes: [:id, :name, :caption, :manufacturer, :currentclockspeed, :_destroy], physicalmemories_attributes: [:id, :capacity, :speed, :_destroy], bios_attributes: [:id, :name, :manufacturer, :version, :serialnumber, :_destroy], diskdrives_attributes: [:id, :model, :size, :partitions, :_destroy], cdromdrives_attributes: [:id, :name, :drive, :_destroy], videocontrollers_attributes: [:id, :caption, :adapterram, :infsection, :_destroy], desktopmonitors_attributes: [:id, :caption, :manufacturer, :screenheight, :screenwidth, :_destroy], networkadapters_attributes: [:id, :adaptertype, :name, :macaddress, :speed, :_destroy])
+    end
+end

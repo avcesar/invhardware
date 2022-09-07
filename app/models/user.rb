@@ -1,0 +1,43 @@
+require 'rubygems'
+require 'net-ldap'
+
+class User < ActiveRecord::Base
+	validates :user, presence: true, uniqueness: { case_sensitive: false }
+	#validates :smtp, uniqueness: true
+	has_many :cabinet_services
+	has_many :printer_services
+	
+	SERVER = '192.168.120.7'
+	PORT = 389
+	BASE = 'DC=central,DC=loteria,DC=gba,DC=gov,DC=ar'
+	DOMAIN = 'central.loteria.gba.gov.ar'
+	GRUPO = 'GComputos'
+
+	def validar(usuario,password)
+		if usuario != '' && password != ''
+			conn = Net::LDAP.new :host => SERVER,
+	                       :port => PORT,
+	                       :base => BASE,
+	                       :auth => { :username => "#{usuario}@#{DOMAIN}",
+	                                  :password => password,
+	                                  :method => :simple }
+			if conn.bind
+				filter = Net::LDAP::Filter.eq("samaccountname", usuario)
+				result = conn.search(:base => BASE, :filter => filter)
+				@usuario = usuario
+				@grupo = GRUPO if result[0][:memberof].to_s.include? GRUPO
+				return true
+			end
+		else
+			return false
+		end                                  
+	end	
+
+	def nombre
+		return @usuario
+	end
+
+	def grupo
+		return @grupo
+	end
+end

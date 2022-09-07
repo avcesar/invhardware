@@ -1,0 +1,10 @@
+$(document).ready(function() {
+		var node = $('#users').dataTable().fnAddData(["<%= @user.user %>","<%= @user.lastname %>","<%= @user.name %>","<%= @user.smtp %>","<%= @user.pop3 %>","<%= @user.password %>", '<a class="btn btn-primary btn-xs" data-remote="true" href="/users/<%=@user.id%>">Show</a> <a class="btn btn-success btn-xs" data-remote="true" href="/users/<%=@user.id%>/edit">Edit</a> <a class="btn btn-danger btn-xs" data-confirm="Are you sure?" data-method="delete" data-remote="true" href="/users/<%=@user.id%>" rel="nofollow">Destroy</a>']);
+		var row = $('#users').dataTable().fnGetNodes(node);
+		$(row).attr('id',"user_<%= @user.id %>");
+		$('#users tr td:nth-child(7)').addClass('right');
+});
+
+$('#ajax-modal').modal('hide');
+$('.flash_error').attr('style','block')
+$('.flash_error').html("<div class='alert alert-success'>User was succesfully created</div>").delay(3000).fadeOut("slow");

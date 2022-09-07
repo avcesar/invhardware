@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  net: MyString
+  nameserver: MyString
+  domain: MyString
+  user: MyString
+  password: MyString
+  active: false
+
+two:
+  net: MyString
+  nameserver: MyString
+  domain: MyString
+  user: MyString
+  password: MyString
+  active: false

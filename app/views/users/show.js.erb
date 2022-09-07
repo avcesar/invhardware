@@ -1,0 +1,6 @@
+$modal = $('.modal'),
+$modalBody = $('.modal .modal-body'),
+$modalHeading = $('.modal .modal-heading');
+$modalHeading.html("Show User");
+$modalBody.html("<%= j render ('show') %>");
+$modal.modal();

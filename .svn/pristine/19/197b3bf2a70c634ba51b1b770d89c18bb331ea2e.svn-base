@@ -1,0 +1,20 @@
+%h1 
+	=@page_title
+
+%table{:id => 'cabinet_services', :class => 'display responsive no-wrap'}
+	%thead
+		%tr
+			%th Title
+			%th Creation date
+			%th Solution date
+			%th State
+			%th Action
+			
+			
+
+	%tbody
+		-@cabinet.cabinet_services.each do |cs|
+			= render partial: 'table_row', locals: {cabinet_service: cs}
+.panel-footer
+	= render 'layouts/modal'
+	= link_to 'new service', new_cabinet_cabinet_service_path(@cabinet), remote: true, :class => 'btn btn-primary'

@@ -1,0 +1,17 @@
+%tr{:id => "network_#{network.id}"}
+	%td 
+		= network.net
+	%td	
+		= network.nameserver
+	%td	
+		= network.domain
+	%td	
+		= network.user
+
+	%td	
+		= network.active
+
+	%td{:class => 'right'}
+		= link_to t('Show'), network, remote: true, :class => 'btn btn-primary btn-xs'
+		= link_to t('Edit'), edit_network_path(network), remote: true, :class => 'btn btn-success btn-xs'
+		= link_to t('Destroy'), network, remote: true, :class => 'btn btn-danger btn-xs', method: :delete, data: { confirm: 'Are you sure?' }

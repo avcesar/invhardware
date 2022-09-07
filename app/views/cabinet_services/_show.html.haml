@@ -1,0 +1,36 @@
+%h4 Service details
+.container
+	.row
+	.col-sm-6.well{:style => 'width: 48%'}
+		%p 
+			%b Pc: 
+			=@cabinet_service.cabinet.computersystem.name
+
+		%p 
+			%b User: 
+			=User.find(@cabinet_service.user_id).user
+
+		%p 
+			%b Title: 
+			=@cabinet_service.title
+
+		%p 
+			%b Creation Date: 
+			=@cabinet_service.creation_date
+
+		%p 
+			%b Problem: 
+			=@cabinet_service.problem
+
+		%p 
+			%b Solution date: 
+			=@cabinet_service.solution_date
+
+		%p 
+			%b Solution: 
+			=@cabinet_service.solution
+
+		%p 
+			%b Solution user: 
+			=User.find(@cabinet_service.solution_user_id).user if @cabinet_service.solution_user_id
+

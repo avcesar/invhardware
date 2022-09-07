@@ -1,0 +1,5 @@
+.nested-fields
+	= f.input :caption, label: "Caption"
+	= f.input :adapterram, label: "Ram"
+	= f.input :infsection, label: "Infsection"
+	= link_to_remove_association "remove video controller", f

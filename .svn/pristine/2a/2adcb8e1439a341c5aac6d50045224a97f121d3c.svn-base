@@ -1,0 +1,16 @@
+= simple_form_for @scheduler, :remote => true do |f|
+  
+	= f.error_notification
+
+	.form_group
+		%b Pc :
+		= f.label @scheduler.cabinet.computersystem.name, input_html: {class: 'form-control'}
+
+	.form_group
+		%b Next service date :
+		= f.label @scheduler.next_service_date.to_s, input_html: {class: 'form-control'}
+
+	.form_group
+		= f.input :frecuency, input_html: {class: 'form-control'}
+
+	= f.button :submit, remote: true, class: "btn btn-primary"

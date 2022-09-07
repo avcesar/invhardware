@@ -1,0 +1,161 @@
+class CabinetServicesController < ApplicationController
+	
+	require 'mailer.rb'
+	require 'prawn'
+
+	FREC = 120
+  
+  before_filter :authorize_admin!
+  before_action :set_cabinet_service, only: [:show, :edit, :update, :destroy]
+
+  def index
+      @page_title = "Listing Pc Services"
+      @cabinet_services = CabinetService.all
+  end
+
+  def new
+    @page_title = "New Pc Service"
+    @cabinet_service = CabinetService.new
+    @cabinet = Cabinet.find(params[:cabinet_id])
+    @user = User.find_by(user: session[:usuario].to_s.downcase)
+    @states = State.all
+    @typeservices = TypeService.all
+  end
+
+  def create
+    @cabinet_service = CabinetService.new(cabinet_service_params)
+    @cabinet_service.user_id = User.find_by(user: session[:usuario].to_s).id
+    @cabinet_service.solution_user_id = @cabinet_service.user_id if params[:state_id] != 1 # estado abierto
+
+		if @cabinet_service.save
+			if !has_scheduler?(params[:cabinet_id])
+				set_scheduler(params[:cabinet_id],params[:cabinet_service][:creation_date])
+			else
+				update_scheduler(params[:cabinet_id],params[:cabinet_service][:creation_date])
+			end
+
+      @evento = " Nuevo"
+      @service = @cabinet_service
+      envio(@service,@evento)
+      
+      respond_to do |format|
+        format.html { redirect_to @cabinet_service, notice: 'Service was successfully created.' }
+        format.js { flash[:notice] = 'Service was successfully created.'}
+      end
+    else
+      @cabinet = Cabinet.find(params[:cabinet_id])
+      @states = State.all
+      @typeservices = TypeService.all
+
+      render 'new'
+    end
+  end
+
+  def show
+  end
+
+  def edit
+    @page_title = "Edit Service"
+    @user = User.find(@cabinet_service.user_id)
+    @usersol = User.find(@cabinet_service.solution_user_id) if @cabinet_service.solution_user_id
+    @cabinet = Cabinet.find(@cabinet_service.cabinet_id)
+    @states = State.all
+    @typeservices = TypeService.all
+  end
+
+  def update
+    @cabinet_service.solution_user_id = User.find_by(user: session[:usuario].to_s).id
+		if @cabinet_service.update(cabinet_service_params)
+
+      @evento = " Actualizacion de"
+      @service = @cabinet_service
+      envio(@service,@evento)
+
+			respond_to do |format|
+				format.html { redirect_to @cabinet_service, notice: 'Service was successfully updated.' }
+				format.js { flash[:notice] = 'Service was successfully updated.'}
+      end
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @cabinet_service.destroy
+    respond_to do |format|
+      format.html { redirect_to cabinet_services_url, notice: 'Service was successfully destroyed.' }
+      format.js { flash[:alert] = 'Service was successfully destroyed.'}
+    end
+  end
+
+  def view
+    @cabinet_services = CabinetService.find_by(cabinet_id: params[:id])
+    @cabinet = Cabinet.find(params[:id])
+    @page_title = 'Pc service list for ' + @cabinet.computersystem.name
+  end
+
+  def set_cabinet_service
+    @cabinet_service = CabinetService.find(params[:id])
+  end
+
+  def cabinet_service_params
+    params.require(:cabinet_service).permit(:title, :state_id, :creation_date, :solution_date, :problem, :solution, :user_id, :solution_user_id, :cabinet_id, :typeservice_id)
+  end
+
+  def preventive
+    @page_title = "Next Preventive service"
+        
+		@services = CabinetService.find_by_sql(query_preventive)
+    @states = State.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @services }
+    end
+  end
+
+  def reportpdf
+
+  	@services = CabinetService.find_by_sql(query_preventive)
+
+    pdf = Prawn::Document.new
+
+    items = @services.map do |service|
+      [
+        service.name,
+        service.next_service_date,
+        service.cant_serv
+      ]
+    end
+    pdf.text "Next service to do", :size => 20, :style => :bold, :align => :center
+    pdf.table [["Pc","Next Service Date","Services"]], :column_widths => 180
+    pdf.table items, :column_widths => 180
+
+    send_data pdf.render, :type => "application/pdf", :disposition => "inline"
+  end
+
+	private
+
+	def query_preventive
+		return "SELECT ca.ID, cs.name,sc.next_service_date, COUNT(se.cabinet_id) cant_serv
+              FROM invhardware_development.cabinets ca
+              left JOIN invhardware_development.computersystems cs ON cs.cabinet_id = ca.id
+              left JOIN invhardware_development.cabinet_services se ON ca.id = se.cabinet_id
+              left JOIN invhardware_development.schedulers sc on ca.ID = sc.cabinet_id
+              GROUP BY cs.name order by sc.next_service_date asc, cant_serv, cs.name"
+	end
+
+	def has_scheduler?(cabinet_id)
+		return Scheduler.find_by(cabinet_id: cabinet_id)
+	end
+
+  def set_scheduler(cabinet_id,date)
+		Scheduler.create(:cabinet_id => cabinet_id, :next_service_date => date.to_time + FREC.days, :frecuency => FREC)
+  end
+
+  def update_scheduler(cabinet_id,date)
+      @scheduler = Scheduler.find_by(cabinet_id: cabinet_id)
+      @scheduler.next_service_date = date.to_time + @scheduler.frecuency.days
+      @scheduler.save
+  end
+end

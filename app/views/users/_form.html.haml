@@ -1,0 +1,24 @@
+= simple_form_for @user, :remote => true do |f|
+	
+	= f.error_notification 
+
+	.form-group
+		= f.input :user, input_html: {class: 'form-control'}
+
+	.form-group
+		= f.input :lastname, input_html: {class: 'form-control'}
+
+	.form-group
+		= f.input :name, input_html: {class: 'form-control'}
+
+	.form-group
+		= f.input :smtp, input_html: {class: 'form-control'}
+
+	.form-group
+		= f.input :pop3, input_html: {class: 'form-control'}
+
+	.form-group
+		= f.input :password, :as => :text, input_html: {class: 'form-control'}
+
+
+	= f.button :submit, remote: true, class: "btn btn-primary"

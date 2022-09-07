@@ -1,0 +1,22 @@
+%h1 
+	=t(@page_title)
+
+%table{:id => 'users', :class => 'display responsive no-wrap'}
+	%thead
+		%tr
+			%th= User.human_attribute_name :User
+			%th= User.human_attribute_name :Lastname
+			%th= User.human_attribute_name :Name
+			%th SMTP
+			%th POP3
+			%th= User.human_attribute_name :Password
+			%th= User.human_attribute_name :Actions
+
+	%tbody
+		-@users.each do |user|
+			= render partial: 'table_row', locals: {user: user}
+.panel-footer
+	= render 'layouts/modal'
+	= link_to t('New User'), new_user_path, remote: true, :class => 'btn btn-primary'
+	= link_to t('.Pdf', :default => t("PDF Version")),
+              '/userpdf', :class => 'btn btn-primary'

@@ -1,0 +1,64 @@
+= simple_form_for [@printer, @printer_service], :remote => true , :html => {:class => 'well'} do |f|
+
+	= f.error_notification 
+	.container
+		.row
+			.col-sm-6
+				.form_group
+					%b Printer:
+					%b= @printer.name.upcase
+				.form_group
+					%b User:
+					%b= session[:usuario].camelcase if session[:usuario]
+				.form-group
+					= f.input :title, input_html: {:style => 'width: 90%'}
+
+				.form-group
+					%b Creation date
+					#dtp1.input-group.date{:style => 'width: 90%'}
+						= f.input :creation_date, label: false, :as => :string
+						%span.input-group-addon
+							%span.glyphicon.glyphicon-calendar
+
+				.form-group
+					%b Solution date
+					#dtp2.input-group.date{:style => 'width: 90%'}
+						= f.input :solution_date, label: false, :as => :string
+						%span.input-group-addon
+							%span.glyphicon.glyphicon-calendar
+
+				.form-group
+					%b Solution User:
+					= f.label @usersol.user if @usersol
+
+				.form-group
+					= f.input :problem, :as => :text, input_html: {:style => 'width: 90%'}								
+
+				.form-group
+					= f.input :solution, :as => :text, input_html: {:style => 'width: 90%'}
+
+				%b State
+				.form_group
+					= f.input :state_id, label: false, :collection => @states,:selected => @printer_service.state_id, input_html: {:style => 'width: 90%'}
+
+				%b Service type
+				.form_group
+					= f.input :typeservice_id, label: false, :collection => @typeservices,:selected => @printer_service.typeservice_id, input_html: {:style => 'width: 90%'}
+
+					= f.input :printer_id, :as => :hidden, :input_html => {:value =>  @printer.id }
+				
+	= f.button :submit, remote: true, class: "btn btn-primary"
+
+
+:javascript
+	$(function () {
+		$('#dtp1').datetimepicker({
+			format: "YYYY-MM-DD hh:mm:ss"
+		});
+	});
+
+	$(function () {
+		$('#dtp2').datetimepicker({
+			format: "YYYY-MM-DD hh:mm:ss"
+		});
+	});

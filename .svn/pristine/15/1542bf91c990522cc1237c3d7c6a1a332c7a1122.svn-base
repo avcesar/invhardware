@@ -1,0 +1,13 @@
+%tr{:id => "printer_service_#{printer_service.id}"}
+	%td
+		= printer_service.title
+	%td
+		= printer_service.creation_date
+	%td
+		= printer_service.solution_date
+	%td
+		= printer_service.state.name
+	%td{:class => 'right'}
+		= link_to 'Show', printer_printer_service_path(printer_service.printer.id, printer_service.id), remote: true, :class => 'btn btn-primary btn-xs'
+		= link_to 'Edit', edit_printer_printer_service_path(printer_service.printer.id, printer_service.id), remote: true, :class => 'btn btn-success btn-xs'
+		= link_to 'Destroy', printer_printer_service_path(printer_service.printer.id, printer_service.id), remote: true, :class => 'btn btn-danger btn-xs', method: :delete, data: { confirm: 'Are you sure?' }

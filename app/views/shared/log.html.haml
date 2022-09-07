@@ -1,0 +1,14 @@
+.panel-header
+	= link_to 'Clear', "logclear", :class => 'btn btn-primary'
+	= link_to 'Refresh', "loglist" , :class => 'btn btn-primary'
+%table{:id => 'logs', :class => 'display responsive no-wrap'}
+	%thead
+		%tr
+			%th Log
+
+	%tbody
+	-File.open('app\controllers\wmilog.txt', 'r') do |f1|
+		-while linea = f1.gets
+			%tr
+			%td 
+				= linea

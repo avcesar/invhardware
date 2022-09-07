@@ -1,0 +1,6 @@
+$modal = $('.modal'),
+$modalBody = $('.modal .modal-body'),
+$modalHeading = $('.modal .modal-heading');
+$modalHeading.html("<%= j @page_title %>");
+$modalBody.html("<%= j render ('form') %>");
+$modal.modal();

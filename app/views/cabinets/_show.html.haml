@@ -1,0 +1,170 @@
+%h4 System
+
+%p 
+	%b Name: 
+	=@cabinet.computersystem.name
+%p
+	%b Ip: 
+	=@cabinet.computersystem.ip
+%p
+	%b Model: 
+	=@cabinet.computersystem.model
+%p 
+	%b Manufacturer: 
+	=@cabinet.computersystem.manufacturer
+%p
+	%b Domain: 
+	=@cabinet.computersystem.domain
+%p
+	%b Total Memory: 
+	=((@cabinet.computersystem.totalphysicalmemory.to_f / (2**30))*100).round.to_f / 100 
+	Gb
+%br
+%h4 Operating System
+%p
+	%b Caption: 
+	=@cabinet.operatingsystem ? @cabinet.operatingsystem.caption : 'n/a'
+%p
+	%b Service Pack: 
+	=@cabinet.operatingsystem ? @cabinet.operatingsystem.csdversion : 'n/a'
+%p
+	%b Country Code: 
+	=@cabinet.operatingsystem ? @cabinet.operatingsystem.countrycode : 'n/a'
+%p
+	%b Current Time Zone: 
+	=@cabinet.operatingsystem ? @cabinet.operatingsystem.currenttimezone : 'n/a'
+%p
+	%b Version: 
+	=@cabinet.operatingsystem ? @cabinet.operatingsystem.version : 'n/a'
+
+%br
+%h4 Base Board
+%p
+	%b Product:
+	=@cabinet.baseboard ? @cabinet.baseboard.product : 'n/a'
+%p
+	%b Manufacturer
+	=@cabinet.baseboard ? @cabinet.baseboard.manufacturer : 'n/a'
+%p
+	%b Serial Number:
+	=@cabinet.baseboard ? @cabinet.baseboard.serialnumber : 'n/a'
+
+%br
+
+%h4 Bios
+%p
+	%b Name:
+	=@cabinet.bios ? @cabinet.bios.name : 'n/a'
+%p
+	%b Manufacturer:
+	=@cabinet.bios ? @cabinet.bios.manufacturer : 'n/a'
+%p
+	%b Version:
+	=@cabinet.bios ? @cabinet.bios.version : 'n/a'
+%p
+	%b Serial Number:
+	=@cabinet.bios ? @cabinet.bios.serialnumber : 'n/a'
+
+%br
+
+-i = 1
+%h4 Processor
+-@cabinet.processors.each do |cpu|
+	%p
+		%b Name:
+		=cpu.name + " (#{i.to_s})"
+	%p
+		%b Caption:
+		=cpu.caption
+	%p
+		%b Manufacturer:
+		=cpu.manufacturer
+	%p
+		%b Clock Speed:
+		=cpu.currentclockspeed
+		Mhz
+	-i += 1
+	%br
+
+%h4 Physical Memory
+-@cabinet.physicalmemories.each do |ram|
+	%p
+		%b Capacity:
+		=((ram.capacity.to_f / (2**20))*100).round.to_f / 100
+		Mb
+	%p
+		%b Speed:
+		=ram.speed
+		Mhz
+	%br
+
+%h4 Storage
+-@cabinet.diskdrives.each do |hdd|
+	%p
+		%b Model
+		=hdd.model
+	%p
+		%b Size:
+		=((hdd.size.to_f / (2**30))*100).round.to_f / 100
+		Gb
+	%p
+		%b Partitions:
+		=hdd.partitions
+
+%br
+%h4 CDrom Drive
+-@cabinet.cdromdrives.each do |cd|
+	%p
+		%b Name:
+		=cd.name
+	%p
+		%b Drive:
+		=cd.drive
+%br
+%h4 Video Controller
+-@cabinet.videocontrollers.each do |gpu|
+	%p
+		%b Caption:
+		=gpu.caption
+	%p
+		%b Adapter Ram:
+		=((gpu.adapterram.to_f / (2**20))*100).round.to_f / 100
+		Mb
+	%p
+		%b GPU:
+		=gpu.infsection
+	%br
+	
+%h4 Desktop Monitor
+-@cabinet.desktopmonitors.each do |dm|
+	%p
+		%b Caption:
+		=dm.caption
+	%p
+		%b Manufacturer:
+		=dm.monitormanufacturer
+	%p
+		%b Screen Height:
+		=dm.screenheight
+		px
+	%p
+		%b Screen width:
+		= dm.screenwidth
+		px
+	%br
+
+%h4 Network Adapter
+-@cabinet.networkadapters.each do |nic|
+	%p
+		%b Adapter Type:
+		=nic.adaptertype
+	%p
+		%b Name:
+		=nic.name
+	%p
+		%b Mac Address:
+		=nic.macaddress
+	%p
+		%b Speed:
+		=nic.speed
+	%br

@@ -1,0 +1,5 @@
+.nested-fields
+	= f.input :model, label: "Model"
+	= f.input :size, label: "Size"
+	= f.input :partitions, label: "Partitions"
+	= link_to_remove_association "remove disk drive", f

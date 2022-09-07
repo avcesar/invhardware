@@ -1,0 +1,24 @@
+= simple_form_for @network, :remote => true do |f|
+	
+	= f.error_notification 
+
+	.form-group
+		= f.input :net, input_html: {class: 'form-control'}
+
+	.form-group
+		= f.input :nameserver, input_html: {class: 'form-control'}
+
+	.form-group
+		= f.input :domain, input_html: {class: 'form-control'}
+
+	.form-group
+		= f.input :user, input_html: {class: 'form-control'}
+
+	.form-group
+		= f.input :password, input_html: {class: 'form-control'}
+
+	.form-group
+		= f.label :active, :class => "check_box"
+		= f.check_box :active, input_html: {class: 'form-control'}
+
+	= f.button :submit, remote: true, class: "btn btn-primary"

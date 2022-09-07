@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  next_service_date: 2015-08-21
+  cabinet_id: 1
+  frecuency: 1
+
+two:
+  next_service_date: 2015-08-21
+  cabinet_id: 1
+  frecuency: 1

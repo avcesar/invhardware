@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  caption: MyString
+  monitormanufacturer: MyString
+  screenheight: 1
+  screenwidth: 1
+
+two:
+  caption: MyString
+  monitormanufacturer: MyString
+  screenheight: 1
+  screenwidth: 1

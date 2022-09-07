@@ -1,0 +1,5 @@
+.nested-fields
+	= f.input :name, label: "Name"
+	= f.input :manufacturer, label: "Manufacturer"
+	= f.input :version, label: "Version"
+	= f.input :serialnumber, label: "Serial Number"

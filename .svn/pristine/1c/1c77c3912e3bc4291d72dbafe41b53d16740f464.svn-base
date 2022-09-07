@@ -1,0 +1,65 @@
+require_relative 'chasis'
+require 'resolv'
+#encapsular en un metodo el llamado a cada metodo del wmi algo asi como explorar
+#escribir un metodo que dado una Ip verifique que la informacion obtenida por el wmi existe en la base de datos con el fin de actualizar host faltantes o tributos nuevos
+
+redes  = Network.where(:active => true).order(:net)
+
+redes.each do |red|
+	(1..254).each do |i|
+		#consulto al DNS para obtener el nombre de host correspondiente a la IP dada.
+		res = Resolv::DNS.new(:nameserver => [red.nameserver], :search => [red.domain], :ndots => 1)
+		begin
+			hostname = res.getname(red.net + i.to_s)
+		rescue
+			hostname = nil
+		end
+		
+		@host = Chasis.new(red.net + i.to_s, hostname, red.domain + '\\' + red.user,red.password)
+		@host.unmapdrive
+		
+		if @host.ping
+			if @host.rpc_up?
+				if @host.existe(@host)
+					id = @host.chasis_id(@host)
+					@host.actualizar(@host, red, id)
+					if @host.mapdrive(@host.ip,@host.user,@host.passwd)
+						if @host.leer_ID(DRIVE + FILE)
+							#comparar archivo ID sea = a la BBDD en ID, host , ip
+							if @host.compare_idfile_with_bbdd(@host)
+								@host.log("#{@host.ip}, El host #{@host.name},El  archivo chasisid.inf es consistente con BBDD, #{Time.now}")		
+							else
+								@host.grabar_ID(DRIVE + FILE ,{'id' => id, 'date' => Time.now,'host' => @host.name, 'domain' => red.domain, 'ip' => red.net + i.to_s})
+								@host.log("#{@host.ip}, El host #{@host.name}, Se regenero el archivo chasisid.inf por inconsistencia con BBDD, #{Time.now}")		
+							end
+						else
+							@host.grabar_ID(DRIVE + FILE ,{'id' => id, 'date' => Time.now,'host' => @host.name.to_s, 'domain' => red.domain.to_s, 'ip' => red.net + i.to_s})
+							@host.log("#{@host.ip}, El host #{@host.name}, El archivo chasisid.inf fue creado, #{Time.now}")		
+						end
+					else
+						@host.log("#{@host.ip}, El host #{@host.name} no tiene el shareo C$, #{Time.now}")
+					end
+					@host.unmapdrive
+				else
+					if @host.mapdrive(@host.ip,@host.user,@host.passwd)
+						if @host.leer_ID(DRIVE + FILE)
+							#comparo archivo ID con la respuesta a la consulta WMI, hostname e IP
+							if @host.compare_idfile_with_host(@host)
+								@host.actualizar_macaddress(@host)
+							else
+								@host.log("#{@host.ip}, #{@host.name}, Inconsitencia entre chasisis.inf e informacion del host, #{Time.now}")	
+							end
+						else
+							id = @host.explorar(@host,red.domain)
+							@host.log("#{@host.ip}, #{@host.name}, explorado #{Time.now}")
+							@host.grabar_ID(DRIVE + FILE ,{'id' => id, 'date' => Time.now,'host' => @host.name, 'domain' => red.domain, 'ip' => red.net + i.to_s})
+						end
+						@host.unmapdrive
+					end
+				end
+			else
+				@host.log("#{@host.ip}, Servidor RPC no disponible, #{Time.now}")
+			end
+		end
+	end
+end	

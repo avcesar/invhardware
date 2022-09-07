@@ -1,0 +1,54 @@
+- notavail = 'n/a'
+%tr{:id => "cabinet_#{cabinet.id}"}
+	%td 
+		= link_to cabinet.computersystem.name, cabinet_cabinet_services_path(cabinet)
+	%td
+		= cabinet.computersystem.ip || notavail
+	%td
+		= cabinet.operatingsystem ? cabinet.operatingsystem.caption : notavail
+	%td
+		= cabinet.operatingsystem ? cabinet.operatingsystem.csdversion : notavail
+	
+	- @nucleos = 0
+	- @cpu = nil
+	- @clock = nil
+	
+	- cabinet.processors.each do |cpu|
+		- @cpu = cpu.name
+		- @clock = cpu.currentclockspeed || notavail
+		- @nucleos += 1
+	%td
+		= @cpu || notavail
+	%td
+		= @nucleos || notavail
+	%td
+		= @clock || notavail
+	%td
+		= ((cabinet.computersystem.totalphysicalmemory.to_f / (2 ** 30))* 100).round.to_f / 100 || notavail
+
+	- @capacity = 0
+	- cabinet.diskdrives.each do |dd|
+		- @capacity += dd.size if dd.size
+
+	%td
+		= ((@capacity.to_f / (2**30))*100).round.to_f / 100 || notavail
+
+	%td
+		- if cabinet.serial_number.present?
+			= cabinet.serial_number
+		- else
+			= notavail
+
+	%td
+		- if cabinet.inventory_number.present?
+			= cabinet.inventory_number
+		- else
+			= notavail
+
+	%td
+		= cabinet.virtual || 'n/a'
+
+	%td{:class => 'right'}
+		= link_to 'Show', cabinet, remote: true, :class => 'btn btn-primary btn-xs'
+		= link_to 'Edit', edit_cabinet_path(cabinet), remote: true, :class => 'btn btn-success btn-xs'
+		= link_to 'Destroy', cabinet, remote: true, :class => 'btn btn-danger btn-xs', method: :delete, data: { confirm: 'Are you sure?' }

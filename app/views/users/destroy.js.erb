@@ -1,0 +1,8 @@
+// elimino una fila dentro del datatable dado el id de la misma 
+$(document).ready(function() {
+  var oTable = $('#users').dataTable();
+  oTable.fnDeleteRow( document.getElementById("user_<%= @user.id %>"));
+} );
+$('.flash_error').attr('style','block')
+$('.flash_error').html("<div class='alert alert-danger'>User was succesfully deleted</div>").delay(3000).fadeOut("slow");
+

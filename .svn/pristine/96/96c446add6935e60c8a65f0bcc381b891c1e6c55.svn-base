@@ -1,0 +1,10 @@
+$(document).ready(function() {
+		var node = $('#networks').dataTable().fnAddData(["<%= @network.net %>","<%= @network.nameserver %>","<%= @network.domain %>","<%= @network.user %>","<%= @network.password %>","<%= @network.active %>", '<a class="btn btn-primary btn-xs" data-remote="true" href="/networks/<%=@network.id%>">Show</a> <a class="btn btn-success btn-xs" data-remote="true" href="/networks/<%=@network.id%>/edit">Edit</a> <a class="btn btn-danger btn-xs" data-confirm="Are you sure?" data-method="delete" data-remote="true" href="/networks/<%=@network.id%>" rel="nofollow">Destroy</a>']);
+		var row = $('#networks').dataTable().fnGetNodes(node);
+		$(row).attr('id',"network_<%= @network.id %>");
+		$('#networks tr td:nth-child(7)').addClass('right');
+});
+
+$('#ajax-modal').modal('hide');
+$('.flash_error').attr('style','block')
+$('.flash_error').html("<div class='alert alert-success'>Netwrok was succesfully created</div>").delay(3000).fadeOut("slow");

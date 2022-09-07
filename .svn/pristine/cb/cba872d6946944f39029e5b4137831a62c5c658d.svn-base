@@ -1,0 +1,5 @@
+class Printer < ActiveRecord::Base
+	validates :name, presence: true
+	has_many :printer_services
+	accepts_nested_attributes_for :printer_services, :reject_if => :all_blank, :allow_destroy => true
+end

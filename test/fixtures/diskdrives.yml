@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  model: MyString
+  size: 1
+  partitions: 1
+
+two:
+  model: MyString
+  size: 1
+  partitions: 1

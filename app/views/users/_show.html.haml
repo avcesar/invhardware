@@ -1,0 +1,28 @@
+%p
+  %strong User:
+  = @user.user
+
+%p
+  %strong Lastname:
+  = @user.lastname
+  
+%p
+  %strong Name:
+  = @user.name
+
+%p
+  %strong SMTP:
+  = @user.smtp
+
+%p
+  %strong POP3:
+  = @user.pop3
+
+%p
+  %strong Password:
+  = @user.password
+
+.panel-footer
+  = link_to 'Edit', edit_user_path(@user), remote: true, :class => 'btn btn-default btn-sm'  
+  |
+  = link_to 'Back', users_path, :class => 'btn btn-default btn-sm'  

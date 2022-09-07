@@ -1,0 +1,13 @@
+= simple_form_for @user, :url => {:controller => 'users', :action =>'autenticar'} do |f|
+
+	= f.error_notification
+	.col-md-3.col-md-offset-4
+		%h4 Autentificación
+		.form_group
+			= f.input :user, label: 'User name', input_html: {:style => 'width: 320px'}
+
+		.form_group
+			= f.input :password, input_html: { :style => 'width: 320px'}
+
+		.panel-footer
+			= f.button :submit, :validar, class: "btn btn-primary"

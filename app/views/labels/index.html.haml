@@ -1,0 +1,21 @@
+%h1 
+	=@page_title
+
+= simple_form_for @cabinet, :url => url_for(:controller => 'labels', :action => 'print') do |f|
+
+	%table{:id => 'cabinets', :class => 'display responsive no-wrap'}
+		%thead
+			%tr
+				%th Selected
+				%th PC
+				%th Serial Number
+				%th Inventory Number
+	
+
+		%tbody
+			-@cabinets.each do |cabinet|
+				= render partial: 'table_row', locals: {f: f,cabinet: cabinet}
+	.panel-footer
+		= render 'layouts/modal'
+		= f.button :submit, "Send to PDF", class: "btn btn-primary"
+

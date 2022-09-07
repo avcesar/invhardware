@@ -1,0 +1,10 @@
+$(document).ready(function() {
+		var node = $('#cabinet_services').dataTable().fnAddData(["<%= @cabinet_service.cabinet.computersystem.name %>","<%= @cabinet_service.title %>","<%= @cabinet_service.creation_date %>","<%= @cabinet_service.solution_date %>","<%= @cabinet_service.state.name%>", '<a class="btn btn-primary btn-xs" data-remote="true" href="/cabinets/<%=@cabinet_service.cabinet.id%>/cabinet_services/<%=@cabinet_service.id%>">Show</a> <a class="btn btn-success btn-xs" data-remote="true" href="/cabinets/<%=@cabinet_service.cabinet.id%>/cabinet_services/<%=@cabinet_service.id%>/edit">Edit</a> <a class="btn btn-danger btn-xs" data-confirm="Are you sure?" data-method="delete" data-remote="true" href="/cabinets/<%=@cabinet_service.cabinet.id%>/cabinet_services/<%=@cabinet_service.id%>" rel="nofollow">Destroy</a>']);
+		var row = $('#cabinet_services').dataTable().fnGetNodes(node);
+		$(row).attr('id',"cabinet_service_<%= @cabinet_service.id %>");
+		$('#cabinet_services tr td:nth-child(6)').addClass('right');
+});
+
+$('#ajax-modal').modal('hide');
+$('.flash_error').attr('style','block')
+$('.flash_error').html("<%= j render ('shared/flash') %>").delay(3000).fadeOut("slow");

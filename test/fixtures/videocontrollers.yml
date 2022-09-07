@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  caption: MyString
+  adapterram: 1
+  infsection: MyString
+
+two:
+  caption: MyString
+  adapterram: 1
+  infsection: MyString

@@ -1,0 +1,8 @@
+// elimino una fila dentro del datatable dado el id de la misma 
+$(document).ready(function() {
+  var oTable = $('#printers').dataTable();
+  oTable.fnDeleteRow( document.getElementById("printer_<%= @printer.id %>"));
+} );
+$('.flash_error').attr('style','block')
+$('.flash_error').html("<%= j render ('shared/flash') %>").delay(3000).fadeOut("slow");
+

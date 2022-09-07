@@ -1,0 +1,28 @@
+%p
+  %strong Net:
+  = @network.net
+
+%p
+  %strong Nameserver:
+  = @network.nameserver
+
+%p
+  %strong Domain:
+  = @network.domain
+
+%p
+  %strong User:
+  = @network.user
+
+%p
+  %strong Password:
+  = @network.password
+
+%p
+  %strong Active:
+  = @network.active
+
+.panel-footer
+  = link_to 'Edit', edit_network_path(@network), remote: true, :class => 'btn btn-default btn-sm'  
+  |
+  = link_to 'Back', networks_path, :class => 'btn btn-default btn-sm'  

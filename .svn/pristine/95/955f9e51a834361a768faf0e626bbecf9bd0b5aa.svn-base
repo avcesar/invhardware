@@ -1,0 +1,4 @@
+.nested-fields
+	= f.input :name, label: "Name"
+	= f.input :drive, label: "Drive"
+	= link_to_remove_association "remove optical drive", f

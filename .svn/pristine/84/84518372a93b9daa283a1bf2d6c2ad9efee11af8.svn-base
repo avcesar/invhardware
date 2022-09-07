@@ -1,0 +1,15 @@
+- @cabinets.each do |cabinet|
+	-if !cabinet.serial_number.blank? || !cabinet.inventory_number.blank?
+
+		-if !cabinet.inventory_number.blank?
+			-@barcode_value = cabinet.inventory_number
+		-else
+			-@barcode_value = cabinet.serial_number
+
+		%img{:src => "/Image_codes/qr_#{cabinet.id}.png"}/
+		%b Este bien pertenece al Instituto Provincia de Loterias y Casinos 
+		%b de la provincia de buienos aires.-
+		%img{:src => "/Image_codes/bc_#{@barcode_value}.png"}/
+		= @barcode_value
+		= cabinet.computersystem.name
+		%br

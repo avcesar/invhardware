@@ -1,0 +1,6 @@
+$modal = $('.modal'),
+$modalBody = $('.modal .modal-body'),
+$modalHeading = $('.modal .modal-heading');
+$modalHeading.html("Edit User");
+$modalBody.html("<%= j render ('form') %>");
+$modal.modal();

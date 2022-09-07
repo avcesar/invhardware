@@ -1,0 +1,4 @@
+.nested-fields
+	= f.input :product, label: "Product"
+	= f.input :manufacturer, label: "Manufacturer"
+	= f.input :serialnumber, label: "Serial Number"
